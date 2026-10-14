@@ -5,6 +5,7 @@ plugins {
 dependencies {
     implementation project(path: ':common')
 
+    implementation platform('net.kyori:adventure-bom:4.25.0')
     implementation 'net.kyori:adventure-platform-bukkit:4.4.0'
     implementation 'io.papermc:paperlib:1.0.8'
     implementation 'space.arim.morepaperlib:morepaperlib:0.4.4'
