@@ -97,6 +97,14 @@ allprojects {
     license {
         rule(rootProject.file('HEADER'))
         include('**/*.java')
+        // Bundled MineDown source keeps its own MIT header
+        exclude('de/themoep/**')
+    }
+
+    // MineDown is bundled in common (de.themoep.minedown.adventure) for Adventure 5 support,
+    // so keep the old net.william278:minedown artifact (pulled in by paginedown) off the classpath
+    configurations.configureEach {
+        exclude group: 'net.william278', module: 'minedown'
     }
 
     test {
